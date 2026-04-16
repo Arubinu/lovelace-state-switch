@@ -125,8 +125,13 @@ class StateSwitch extends LitElement {
         }
     }
 
-    if (newstate === undefined || !this.cards.hasOwnProperty(newstate))
+
+    if (newstate === undefined || !this.cards.hasOwnProperty(newstate)) {
+      if (this._config.ignore_missing && this.state !== undefined) {
+        return;
+      }
       newstate = this._config.default;
+    }
     this.state = newstate;
   }
 

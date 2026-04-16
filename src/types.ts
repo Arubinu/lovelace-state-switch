@@ -7,6 +7,8 @@ export interface StateSwitchConfig {
 
   transition: string;
   transition_time: number;
+
+  ignore_missing?: boolean;
 }
 
 export interface LovelaceCard extends HTMLElement {
